@@ -1,15 +1,13 @@
 name: generate animation
 
 on:
-    schedule:
+  schedule:
     - cron: "0 0 * * *"
-
   workflow_dispatch:
-
-  push:
+  push: 
     branches:
-    - master
-    - main
+      - master
+      - main
 
 jobs:
   generate:
@@ -17,7 +15,7 @@ jobs:
     timeout-minutes: 5
     
     steps:
-      - name: generate github-contribution-grid-snake.svg
+      - name: generate-snake-game-from-github-contribution-grid
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
